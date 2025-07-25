@@ -33,7 +33,7 @@ function Login() {
 
         try {
           // Send the selected role and department to the backend for verification
-          const res = await axios.post('http://localhost:5050/api/login', { email, selectedRole });
+          const res = await axios.post('http://employee-hr-server.onrender.com/api/login', { email, selectedRole });
           const userRole = res.data.role || 'Employee';
           const userDepartment = res.data.department;
 
