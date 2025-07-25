@@ -35,7 +35,11 @@ app.use((req, res, next) => {
   res.setHeader('Cross-Origin-Embedder-Policy', 'unsafe-none');
   next();
 });
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://employee-hr.vercel.app'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 
